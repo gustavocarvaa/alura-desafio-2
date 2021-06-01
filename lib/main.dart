@@ -1,13 +1,7 @@
-import 'dart:convert';
-
-import 'package:alura_desafio_2/models/character_model.dart';
 import 'package:flutter/material.dart';
 
 import 'screens/homepage.dart';
 
-import 'database/app_database.dart';
-
-import 'repositories/hp_repository.dart';
 
 
 void main() {

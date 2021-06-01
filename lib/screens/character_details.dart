@@ -23,7 +23,7 @@ class CharacterDetails extends StatelessWidget {
                   color: Colors.orange,
                   margin: EdgeInsets.all(16.0),
                   //TODO: Colocar loading na imagem
-                  child: Image.network('${character.image}'),
+                  child: Image.network('${character.image}', fit: BoxFit.cover,),
                 ),
                 Container(
                   height: 250,

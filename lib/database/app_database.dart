@@ -35,6 +35,7 @@ Future<int> save(CharacterModel characterModel) {
     characterMap['ancestry'] = characterModel.ancestry;
     characterMap['eyeColour'] = characterModel.eyeColour;
     characterMap['hairColour'] = characterModel.hairColour;
+    //TODO: add another table for wand 
     // if (characterModel.wand != null) {
     //   characterMap['wand'] = characterModel.wand.toJson();
     // }
@@ -59,28 +60,6 @@ Future<List<CharacterModel>> findAll() async {
       maps.length,
       (i) {
         return CharacterModel.fromMap(maps[i]);
-        // return CharacterModel(
-        //   id: maps[i]['id'],
-        //   name: maps[i]['name'],
-        //   species: maps[i]['species'],
-        //   gender: maps[i]['gender'],
-        //   house: maps[i]['house'],
-        //   dateOfBirth: maps[i]['dateOfBirth'],
-        //   yearOfBirth: maps[i]['yearOfBirth'],
-        //   ancestry: maps[i]['ancestry'],
-        //   eyeColour: maps[i]['eyeColour'],
-        //   hairColour: maps[i]['hairColour'],
-        //   // if (this.wand != null) {
-        //   //   maps[i]['wand'],
-        //   // },
-        //   patronus: maps[i]['patronus'],
-        //   hogwartsStudent: maps[i]['hogwartsStudent'],
-        //   hogwartsStaff: maps[i]['hogwartsStaff'],
-        //   actor: maps[i]['actor'],
-        //   alive: maps[i]['alive'],
-        //   image: maps[i]['image'],
-        //   favorite: maps[i]['favorite']
-        // );
       },
     );
   } catch (ex) {

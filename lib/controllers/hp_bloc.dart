@@ -1,10 +1,11 @@
 import 'package:alura_desafio_2/database/app_database.dart';
 import 'package:alura_desafio_2/models/character_model.dart';
 import 'package:alura_desafio_2/repositories/hp_repository.dart';
+import 'package:http/http.dart';
 import 'package:rxdart/rxdart.dart';
 
 class WizardsBloc {
-  final _repository = CharacterRepo();
+  final _repository = CharacterRepo(Client());
   final _wizardFetcher = PublishSubject<List<dynamic>>();
 
   Stream<List<dynamic>> get allWizards => _wizardFetcher.stream;

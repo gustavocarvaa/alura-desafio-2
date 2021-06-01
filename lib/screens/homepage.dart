@@ -5,12 +5,7 @@ import 'package:flutter/material.dart';
 
 import 'widgets/character_card.dart';
 
-class MyHomePage extends StatefulWidget {
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<dynamic> favorites;
@@ -52,16 +47,18 @@ class _MyHomePageState extends State<MyHomePage> {
                       itemCount: snapshot.data.length,
                       itemBuilder: (context, index) {
                         var classMates = snapshot.data
-                      .where((element) => element.house == snapshot.data[index].house && element.id != snapshot.data[index].id)
-                      .toList();
+                            .where((element) =>
+                                element.house == snapshot.data[index].house &&
+                                element.id != snapshot.data[index].id)
+                            .toList();
                         return CharacterCard(
                           character: snapshot.data[index],
                           onTapCard: () => Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => CharacterDetails(
-                                      character: snapshot.data[index], classMates: classMates
-                                    )),
+                                    character: snapshot.data[index],
+                                    classMates: classMates)),
                           ),
                           onTapTrailing: () =>
                               bloc.favCharacter(snapshot.data[index]),
